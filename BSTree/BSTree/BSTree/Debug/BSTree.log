@@ -1,0 +1,4 @@
+﻿  BSTree.cpp
+c:\users\cp24\desktop\aisd\bstree\bstree\bstree\bstree.cpp(87): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\cp24\desktop\aisd\bstree\bstree\bstree\bstree.cpp(100): warning C4715: "Tree::find”: niewszystkie ścieżki kodu zwracają wartość
+  BSTree.vcxproj -> C:\Users\cp24\Desktop\AiSD\BSTree\BSTree\Debug\BSTree.exe
