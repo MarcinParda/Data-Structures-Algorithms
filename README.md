@@ -10,4 +10,4 @@
  - [x] recursiveSpiral
  - [x] Horner algorithm
  - [x] isPalindrome
- - [ ] QuickSort
+ - [x] QuickSort
