@@ -1,5 +1,7 @@
 # Data structures and algorithms
 ### Data structures:
+ - [x] Queue
+ - [x] Stack
  - [ ] BSTree
 ### Algorithms:
  - [x] SortByInsertion
