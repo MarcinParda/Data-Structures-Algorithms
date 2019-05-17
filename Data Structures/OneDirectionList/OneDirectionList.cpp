@@ -15,8 +15,9 @@ public:
 };
 class OneList {
 public:
+	int listSize = 0;
 	Element* first = NULL;
-	Element* last  = NULL;
+	Element* last = NULL;
 
 	//Add first element to List
 	void addFirstElement(int d) {
@@ -29,6 +30,7 @@ public:
 		else {
 			cout << "There is already some elements" << endl << endl;
 		}
+		listSize++;
 	}
 
 	//Add element with data d on end pos
@@ -42,6 +44,7 @@ public:
 		newElement->next = NULL;
 		last->next = newElement;
 		last = newElement;
+		listSize++;
 	}
 
 	//Add element with data d on first pos
@@ -54,6 +57,7 @@ public:
 		cout << "Add " << d << " as the first element" << endl << endl;
 		newElement->next = first;
 		first = newElement;
+		listSize++;
 	}
 
 	//Add element with data d after position pos
@@ -65,7 +69,7 @@ public:
 		}
 		Element* newElement = new Element(d);
 		Element* whereIAm = first;
-		
+
 		int i = 0;
 		while (i < pos)
 		{
@@ -80,6 +84,7 @@ public:
 		cout << "Add " << d << " after the " << pos << " element" << endl << endl;
 		newElement->next = whereIAm->next;
 		whereIAm->next = newElement;
+		listSize++;
 	}
 
 	//Add element with data d before position pos
@@ -112,6 +117,36 @@ public:
 		cout << "Add " << d << " before the " << pos << " element" << endl << endl;
 		newElement->next = whereIAm->next;
 		whereIAm->next = newElement;
+		listSize++;
+	}
+
+	//Delete item on position pos (counting from 0)
+	void deleteElement(int pos) {
+		Element* whereIAm = first;
+		if (whereIAm == NULL) {
+			cout << "There is no elements in List" << endl << endl;
+			listSize--;
+			return;
+		}
+		if (pos == 0) {
+			first = whereIAm->next;
+			delete whereIAm;
+			cout << "Delete 1st element in list" << endl << endl;
+			listSize--;
+			return;
+		}
+		for (int i = 0; i < pos - 1; i++) {
+			whereIAm = whereIAm->next;
+		}
+		Element* tmp = whereIAm->next;
+		whereIAm->next = whereIAm->next->next;
+		cout << "Delete " << pos + 1 << " element in list" << endl << endl;
+		listSize--;
+		delete tmp;
+	}
+
+	void size() {
+		cout << "List size: " << listSize << endl << endl;
 	}
 
 	void showList() {
@@ -136,10 +171,14 @@ int main()
 	myList.addFirstElement(2);
 	myList.pushBack(5);
 	myList.pushFront(1);
+	myList.deleteElement(1);
+	myList.deleteElement(1);
+	myList.size();
 	myList.showList();
 
-	myList.insertBefore(4, 2);
+	myList.insertBefore(4, 0);
 	myList.insertAfter(3, 1);
+	myList.size();
 	myList.showList();
 
 	system("pause");
