@@ -1,5 +1,7 @@
 # Data structures and algorithms
 ### Data structures:
+ - [x] TwoDiretionList
+ - [x] OneDiretionList
  - [x] Queue
  - [x] Stack
  - [ ] BSTree
