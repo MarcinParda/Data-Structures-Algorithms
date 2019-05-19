@@ -5,7 +5,8 @@
 using namespace std;
 
 class Element {
-public:
+private:
+	friend class OneList;
 	Element* next = NULL;
 	int data = 0;
 	Element(int d) {
@@ -14,11 +15,11 @@ public:
 	}
 };
 class OneList {
-public:
+private:
 	int listSize = 0;
 	Element* first = NULL;
 	Element* last = NULL;
-
+public:
 	//Add first element to List
 	void addFirstElement(int d) {
 		if (first == NULL || last == NULL) {
