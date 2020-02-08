@@ -15,3 +15,4 @@
  - [x] Horner algorithm
  - [x] isPalindrome
  - [x] QuickSort
+#### For more algorithms check here: https://app.codesignal.com/profile/marcin_p12
